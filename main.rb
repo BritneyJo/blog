@@ -22,19 +22,20 @@ get '/post/:id' do
   haml :view_post
 end
 
-# post '/post/:id/edit' do
-#   puts 'homepage'
-# end
+post '/post/:id/edit' do
+  puts 'post has been updated'
+end
 
 get '/admin_connect' do
-  if params["login"]== "admin1" and params["password"]=="wdi"
+  if params["login"] == "admin1" and params["password"]=="wdi"
     session[:admin] = true
     redirect "/"
     haml :admin_connect
   end
 end
 
-# get '/admin' do
-#   unless session[:admin] == true
-#     redirect "/"
-# end
+get '/admin' do
+  unless session[:admin] == true
+    redirect "/"
+  end
+end
