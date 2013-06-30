@@ -1,2 +1,10 @@
 %h1
   Blogitivity
+
+%h2
+  Blog Posts
+  %ol
+    - @results.each do |result|
+      %li
+        %a{href:"/post/#{result['id']}"}
+        = result['title']
