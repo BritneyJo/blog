@@ -1,2 +1,19 @@
-%h2
- Post Title
+%h1
+= @results['title']
+
+%div
+  %ul
+    %li
+      = @results['content']
+    %li
+      = @results['author']
+    %li
+      = @results['creation_date']
+
+%div
+  %button
+    Home
+  %button
+    Update
+  %button
+    Delete

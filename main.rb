@@ -11,14 +11,14 @@ configure do
 end
 
 get '/' do
-  sql = "select * from posts"
+  sql = "SELECT * FROM posts"
   @results = db.exec(sql)
 haml :index
 end
 
 get '/post/:id' do
-  sql = "select * from posts where id = #{params[:id]} limit 1"
-  @result = deb.exec(sql).first
+  sql = "SELECT * FROM posts WHERE id=#{params[:id]} limit 1"
+  @results = db.exec(sql).first
   haml :view_post
 end
 

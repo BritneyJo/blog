@@ -2,9 +2,9 @@
   Blogitivity
 
 %h2
-  Blog Posts
-  %ol
+  Posts
+  %ul
     - @results.each do |result|
       %li
         %a{href:"/post/#{result['id']}"}
-        = result['title']
+          = result['title']
