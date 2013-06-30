@@ -1,0 +1,18 @@
+- if @result
+/ <section>
+/   <header><h2>CREATING...</h2></header>
+/ </section>
+/ <%end%>
+
+
+
+%form{action:"/create_post", method:"post"}
+  Post Title:
+  %input{type:"text", name:"title"}
+  Content:
+  %input{type:"text", name:"content"}
+  Date:
+  %input{type:"date", name:"creation_date"}
+  Author:
+  %input{type:"text", name:"author"}
+  %button CREATE!
