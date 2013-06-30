@@ -1,5 +1,8 @@
 %h1
-= @results['title']
+  Blogitivity
+
+%h2
+  = @results['title']
 
 %div
   %ul
@@ -12,8 +15,11 @@
 
 %div
   %button
-    Home
+    %a{href:"/"}
+      Home
   %button
-    Update
+    %a{href:"/"}
+      Update
   %button
-    Delete
+    %a{href:"/admin_connect"}
+      Delete

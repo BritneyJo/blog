@@ -26,11 +26,13 @@ end
 #   puts 'homepage'
 # end
 
-# get '/admin_connect' do
-#   if params["login"]== "admin1" and params["password"]=="wdi"
-#     session[:admin] = true
-#     redirect "/admin" #page not created yet...
-# end
+get '/admin_connect' do
+  if params["login"]== "admin1" and params["password"]=="wdi"
+    session[:admin] = true
+    redirect "/"
+    haml :admin_connect
+  end
+end
 
 # get '/admin' do
 #   unless session[:admin] == true
