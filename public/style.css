@@ -5,4 +5,64 @@ body {
   margin: auto;
   margin-top: 30px;
   line-height: 24px;
+  width: 940px;
 }
+
+header {
+  width: 940px;
+  height: 200px;
+  background: url("/images/blog-head.jpg");
+}
+
+h1.home{
+  margin: auto;
+  text-align: center;
+  font-size: 70px;
+  padding-top: 60px;
+}
+
+
+.admin {
+  width: 180px;
+  margin: auto;
+  float: right;
+  padding-top: 40px;
+}
+
+h3{
+  margin: 0px;
+}
+
+.homepage{
+  width: 720px;
+  margin-right: 0px;
+  float: left;
+  padding-top: 40px;
+  padding-left: 20px;
+}
+
+.content{
+  width: 720px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.icons {
+  width: 720px;
+  height: 100px;
+
+}
+
+
+ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.info li{
+  display: inline-block;
+  text-align: center;
+}
+
+
+

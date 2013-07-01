@@ -1,10 +1,28 @@
-%h1
-  Blogitivity
+%header
+  %h1.home
+    Blogitivity
 
-%h2
-  Posts
-  %ul
-    - @results.each do |result|
-      %li
-        %a{href:"/post/#{result['id']}"}
-          = result['title']
+
+
+.homepage
+  %h2
+    Posts
+    %ul.posts
+      - @results.each do |result|
+        %li
+          %a{href:"/post/#{result['id']}"}
+            = result['title']
+
+.admin
+  %h3
+    Admin Sign In
+
+  %form{action: "/admin_connect", method: "post"}
+    Login
+    %br
+    %input{name: "login"}
+    %br
+    Password
+    %br
+    %input{name: "password", type: "password"}
+    %button submit

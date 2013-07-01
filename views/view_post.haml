@@ -4,22 +4,20 @@
 %h2
   = @results['title']
 
-%div
-  %ul
-    %li
-      = @results['content']
+.content
+  %p
+    = @results['content']
+  %ul.info
     %li
       = @results['author']
     %li
       = @results['creation_date']
 
-%div
-  %button
-    %a{href:"/"}
-      Home
-  %button
-    %a{href:"/admin_connect"}
-      Update
-  %button
-    %a{href:"/admin_connect"}
-      Delete
+.icons
+  %a{href:"/"}
+    %i.icon-search.icon-home
+  %a{href:"/admin_connect"}
+    %i.icon-search.icon-pencil
+  %a{href:"/admin_connect"}
+    %i.icon-search.icon-remove
+

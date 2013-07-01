@@ -17,6 +17,10 @@ haml :index
 end
 
 get '/admin_connect' do
+  haml :admin_connect
+end
+
+post '/admin_connect' do
   if params["login"] == "admin1" and params["password"]=="wdi"
     session[:admin] = true
     redirect "/admin"
@@ -25,11 +29,18 @@ get '/admin_connect' do
 end
 
 get '/admin' do
-  unless session[:admin] == true
+  if session[:admin] == false
     redirect "/"
+  else session[:admin] == true
+    redirect "/update/:id"
   end
 end
 
+get '/post/:id' do
+  sql = "SELECT * FROM posts WHERE id=#{params[:id]} limit 1"
+  @results = db.exec(sql).first
+  haml :view_post
+end
 
 get '/create_post' do
   haml :create_post
@@ -51,16 +62,10 @@ get '/delete/:id' do
   haml :delete_post
 end
 
-get '/post/:id' do
-  sql = "SELECT * FROM posts WHERE id=#{params[:id]} limit 1"
-  @results = db.exec(sql).first
-  haml :view_post
-end
-
 
 get '/update/:id' do
     sql = "select * from posts where id = #{params[:id]} limit 1"
-      @results = db.exec(sql).first
+    @results = db.exec(sql).first
   haml :edit
 end
 
